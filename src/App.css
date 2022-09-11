@@ -1,0 +1,76 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: hsl(239, 84%, 77%);
+}
+
+.header {
+  margin: 20px;
+}
+
+.header .country-search {
+  width: 100%;
+  background-color: hsl(239, 84%, 87%);
+  border: none;
+  outline: none;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.countries-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.country-container {
+  width: 200px;
+  height: 200px;
+  background-color: hsl(239, 84%, 87%);
+  margin: 10px;
+  border-radius: 15px;
+  overflow: hidden;
+  padding: 8px;
+  transition: all 400ms;
+}
+
+.country-container:hover {
+  --shadow-size: 10px;
+  --transform-size: calc(-1 * var(--shadow-size));
+  cursor: pointer;
+  transform: translate(var(--transform-size), var(--transform-size));
+  box-shadow: var(--shadow-size) var(--shadow-size) #34324a;
+}
+
+.country-container .title {
+  height: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.country-container .title .flag {
+  height: 30px;
+  border-radius: 5px;
+}
+
+.country-details {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 500px) {
+  .country-container {
+    width: 90%;
+    height: 100px;
+  }
+}
